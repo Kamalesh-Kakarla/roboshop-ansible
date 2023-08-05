@@ -11,7 +11,6 @@
       ansible.builtin.yum:
         name: mongodb-org
         state: installed
-#        enabled: yes
 
     - name: Update listen address in mongodb
       ansible.builtin.replace:
