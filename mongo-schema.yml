@@ -1,0 +1,13 @@
+- name: Create MongoDB yum repo file
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: Install Mongo Client
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: installed
+
+- name: Load User Schema
+  ansible.builtin.shell: mongo --host mongodb-dev.kkakarla.online </app/schema/{{component}}.js
+
