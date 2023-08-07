@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Copy mongo yum repo file
+    - name: Copy mongo.repo file
       ansible.builtin.copy:
         src: mongo.repo
         dest: /etc/yum.repos.d/mongo.repo
@@ -12,16 +12,14 @@
         name: mongodb-org
         state: installed
 
-    - name: Update listen address in mongodb
+    - name: Update listen address in mongoDB configuration file
       ansible.builtin.replace:
         path: /etc/mongod.conf
         regexp: '127.0.0.1'
         replace: '0.0.0.0'
 
-    - name: Restart mongodb
+    - name: Restart nginx
       ansible.builtin.systemd:
         name: mongod
         state: restarted
         enabled: yes
-
-
