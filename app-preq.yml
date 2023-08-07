@@ -1,19 +1,21 @@
-- name: Add application user
+- name: Create App user
   ansible.builtin.user:
     name: roboshop
 
-- name: Clean old app content
+- name: Clean App old content
   ansible.builtin.file:
-    path: /app
+    path: /usr/share/nginx/html
     state: absent
 
 - name: Create App directory
   ansible.builtin.file:
-    path: /app
+    path: /usr/share/nginx/html
     state: directory
 
-- name: Download application content
+- name: Download and extract App content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
-    dest: /app
+    dest: /tmp/{{component}}.zip
     remote_src: yes
+
+
