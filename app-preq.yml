@@ -4,7 +4,7 @@
 
 - name: Clean App old content
   ansible.builtin.file:
-    path: /usr/share/nginx/html
+    path: /app
     state: absent
 
 - name: Create App directory
