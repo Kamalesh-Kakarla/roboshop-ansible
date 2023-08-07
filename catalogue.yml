@@ -1,6 +1,6 @@
 - name: Catalogue setup
   hosts: all
-  Vars:
+  vars:
     component: catalogue
   tasks:
     - name: Nodejs setup
