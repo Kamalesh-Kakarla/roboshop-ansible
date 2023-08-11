@@ -30,7 +30,6 @@
 
     - name: Install golang Dependencies
       ansible.builtin.shell:
-        name:
          - go mod init dispatch
          - go get
          - go build
