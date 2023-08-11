@@ -36,6 +36,6 @@
     - name: Restart dispatch
       ansible.builtin.systemd:
         name: dispatch
-        state: restart
+        state: restarted
         daemon_reload: true
 
