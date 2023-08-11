@@ -1,0 +1,8 @@
+- name: python setup
+  hosts: all
+  become: true
+  vars:
+    component: user
+  tasks:
+    - name: python setup
+      ansible.builtin.import_tasks: python.yml
