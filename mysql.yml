@@ -1,3 +1,5 @@
+
+
 - name: Mysql setup
   hosts: all
   become: true
