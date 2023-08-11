@@ -25,7 +25,7 @@
     - name: Download and extract application content
       ansible.builtin.unarchive:
         src: https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
-        dest: /usr/share/nginx/html
+        dest: /app
         remote_src: yes
 
     - name: Install golang Dependencies
